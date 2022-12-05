@@ -1,26 +1,26 @@
 import {assert, fixture, html} from '@open-wc/testing'
-import '../src/custom-element'
+import '../src/hacker-typer'
 
-describe('custom-element', function () {
+describe('hacker-typer', function () {
   describe('element creation', function () {
     it('creates from document.createElement', function () {
-      const el = document.createElement('custom-element')
-      assert.equal('CUSTOM-ELEMENT', el.nodeName)
+      const el = document.createElement('hacker-typer')
+      assert.equal('HACKER-TYPER', el.nodeName)
     })
 
     it('creates from constructor', function () {
       const el = new window.CustomElementElement()
-      assert.equal('CUSTOM-ELEMENT', el.nodeName)
+      assert.equal('HACKER-TYPER', el.nodeName)
     })
   })
 
   describe('after tree insertion', function () {
     beforeEach(async function () {
-      await fixture(html` <custom-element></custom-element>`)
+      await fixture(html` <hacker-typer></hacker-typer>`)
     })
 
     it('initiates', function () {
-      const ce = document.querySelector('custom-element')
+      const ce = document.querySelector('hacker-typer')
       assert.equal(ce?.textContent, ':wave:')
     })
   })
